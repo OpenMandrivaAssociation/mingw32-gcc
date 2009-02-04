@@ -17,8 +17,8 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:  texinfo
 BuildRequires:  mingw32-filesystem >= 39-3
 BuildRequires:  mingw32-binutils
-#BuildRequires:  mingw32-runtime
-#BuildRequires:  mingw32-w32api
+BuildRequires:  mingw32-runtime
+BuildRequires:  mingw32-w32api
 BuildRequires:  gmp-devel
 BuildRequires:  mpfr-devel
 BuildRequires:  libgomp-devel
