@@ -1,5 +1,6 @@
 %define __os_install_post /usr/lib/rpm/brp-compress %{nil}
 %define Werror_cflags %nil
+%define _libexecdir /usr/lib
 
 Name:           mingw32-gcc
 Version:        4.3.2
@@ -138,7 +139,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/gcc/i586-pc-mingw32/%{version}/include/ssp/*.h
 %dir %{_libdir}/gcc/i586-pc-mingw32/%{version}/install-tools
 %{_libdir}/gcc/i586-pc-mingw32/%{version}/install-tools/*
-%dir %{_libexecdir}/gcc/i586-pc-mingw32/%{version}/install-tools
+%dir %{_libdir}/gcc/i586-pc-mingw32/%{version}/install-tools
 %{_libexecdir}/gcc/i586-pc-mingw32/%{version}/install-tools/*
 %{_mandir}/man1/i586-pc-mingw32-gcc.1*
 %{_mandir}/man1/i586-pc-mingw32-gcov.1*
