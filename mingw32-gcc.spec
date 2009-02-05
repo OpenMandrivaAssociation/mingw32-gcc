@@ -1,5 +1,6 @@
 %define __os_install_post /usr/lib/rpm/brp-compress %{nil}
 %define Werror_cflags %nil
+%define _libexecdir /usr/libexec
 
 Name:           mingw32-gcc
 Version:        4.3.2
