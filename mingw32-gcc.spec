@@ -39,7 +39,7 @@ MinGW Windows cross-compiler (GCC) for C
 
 %package -n mingw32-cpp
 Summary: MinGW Windows cross-C Preprocessor.
-Group: Development/Languages
+Group: Development/Other
 
 %description -n mingw32-cpp
 MinGW Windows cross-C Preprocessor
@@ -47,7 +47,7 @@ MinGW Windows cross-C Preprocessor
 
 %package c++
 Summary: MinGW Windows cross-compiler for C++
-Group: Development/Languages
+Group: Development/Other
 
 %description c++
 MinGW Windows cross-compiler for C++
