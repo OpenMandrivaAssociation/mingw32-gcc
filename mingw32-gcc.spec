@@ -1,10 +1,9 @@
 %define __os_install_post /usr/lib/rpm/brp-compress %{nil}
 %define Werror_cflags %nil
-%define _libexecdir /usr/libexec
 
 Name:           mingw32-gcc
 Version:        4.3.2
-Release:        %mkrel 1
+Release:        %mkrel 2
 Summary:        MinGW Windows cross-compiler (GCC) for C
 
 License:        GPLv2+
@@ -73,6 +72,7 @@ CC="%{__cc} ${RPM_OPT_FLAGS}" \
   --bindir=%{_bindir} \
   --includedir=%{_includedir} \
   --libdir=%{_libdir} \
+  --libexecdir=%{_prefix}/lib \
   --mandir=%{_mandir} \
   --infodir=%{_infodir} \
   --datadir=%{_datadir} \
