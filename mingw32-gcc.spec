@@ -3,8 +3,8 @@
 %define _libexecdir /usr/lib
 
 Name:           mingw32-gcc
-Version:        4.3.2
-Release:        %mkrel 2
+Version:        4.4.2
+Release:        %mkrel 1
 Summary:        MinGW Windows cross-compiler (GCC) for C
 
 License:        GPLv2+
@@ -56,7 +56,7 @@ MinGW Windows cross-compiler for C++
 %prep
 %setup -q -c
 %setup -q -D -T -a1
-%patch1 -p1
+#%patch1 -p1
 
 
 %build
@@ -87,7 +87,9 @@ CC="%{__cc} ${RPM_OPT_FLAGS}" \
   --disable-win32-registry \
   --enable-version-specific-runtime-libs \
   --with-sysroot=%{_mingw32_sysroot} \
-  --enable-languages="$languages" $optargs
+  --enable-languages="$languages" $optargs \
+  --disable-sjlj-exceptions \
+  --with-dwarf2
 
 %make all
 
@@ -118,8 +120,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/i586-pc-mingw32-gcc-%{version}
 %{_bindir}/i586-pc-mingw32-gccbug
 %{_bindir}/i586-pc-mingw32-gcov
+%{_bindir}/libgcc_s_dw2-1.dll
 %{_prefix}/i586-pc-mingw32/lib/libiberty.a
 %dir %{_libdir}/gcc/i586-pc-mingw32
+%{_libdir}/gcc/i586-pc-mingw32/bin/libssp-0.dll
 %dir %{_libdir}/gcc/i586-pc-mingw32/%{version}
 %{_libdir}/gcc/i586-pc-mingw32/%{version}/crtbegin.o
 %{_libdir}/gcc/i586-pc-mingw32/%{version}/crtend.o
@@ -130,6 +134,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/gcc/i586-pc-mingw32/%{version}/libssp.la
 %{_libdir}/gcc/i586-pc-mingw32/%{version}/libssp_nonshared.a
 %{_libdir}/gcc/i586-pc-mingw32/%{version}/libssp_nonshared.la
+%{_libdir}/gcc/i586-pc-mingw32/%{version}/libgcc_eh.a
+%{_libdir}/gcc/i586-pc-mingw32/%{version}/libgcc_s.a
+%{_libdir}/gcc/i586-pc-mingw32/%{version}/libssp.dll.a
 %dir %{_libdir}/gcc/i586-pc-mingw32/%{version}/include
 %dir %{_libdir}/gcc/i586-pc-mingw32/%{version}/include-fixed
 %dir %{_libdir}/gcc/i586-pc-mingw32/%{version}/include/ssp
@@ -139,7 +146,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/gcc/i586-pc-mingw32/%{version}/include/ssp/*.h
 %dir %{_libdir}/gcc/i586-pc-mingw32/%{version}/install-tools
 %{_libdir}/gcc/i586-pc-mingw32/%{version}/install-tools/*
-%dir %{_libdir}/gcc/i586-pc-mingw32/%{version}/install-tools
+%dir %{_libexecdir}/gcc/i586-pc-mingw32/%{version}/install-tools
 %{_libexecdir}/gcc/i586-pc-mingw32/%{version}/install-tools/*
 %{_mandir}/man1/i586-pc-mingw32-gcc.1*
 %{_mandir}/man1/i586-pc-mingw32-gcov.1*
