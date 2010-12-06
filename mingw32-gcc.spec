@@ -4,7 +4,7 @@
 
 Name:           mingw32-gcc
 Version:        4.4.2
-Release:        %mkrel 2
+Release:        %mkrel 3
 Summary:        MinGW Windows cross-compiler (GCC) for C
 
 License:        GPLv2+
