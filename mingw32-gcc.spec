@@ -174,3 +174,35 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/gcc/i586-pc-mingw32/%{version}/libsupc++.la
 %{_libexecdir}/gcc/i586-pc-mingw32/%{version}/cc1plus
 %{_libexecdir}/gcc/i586-pc-mingw32/%{version}/collect2
+
+
+%changelog
+* Mon Dec 06 2010 Oden Eriksson <oeriksson@mandriva.com> 4.4.2-3mdv2011.0
++ Revision: 612870
+- the mass rebuild of 2010.1 packages
+
+* Tue Feb 16 2010 Funda Wang <fwang@mandriva.org> 4.4.2-2mdv2010.1
++ Revision: 506672
+- rebuild
+
+* Mon Nov 23 2009 Crispin Boylan <crisb@mandriva.org> 4.4.2-1mdv2010.1
++ Revision: 469394
+- 4.4.2 binaries
+- Update to 4.4.2
+- Disable sjlj exceptions and enable dwarf2 to match official mingw windows build
+
+* Mon Sep 14 2009 Thierry Vignaud <tv@mandriva.org> 4.3.2-2mdv2010.0
++ Revision: 439816
+- rebuild
+
+* Thu Feb 05 2009 Jérôme Soyer <saispo@mandriva.org> 4.3.2-1mdv2009.1
++ Revision: 337898
+- define libexec
+- Remove dot in summary
+- Move all libexecdir to lib
+- Fix RPM Group
+- Add macro to spec files
+- Readd BR with bootstrapping for first build
+- import mingw32-gcc
+
+
