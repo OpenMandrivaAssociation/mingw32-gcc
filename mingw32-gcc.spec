@@ -9,7 +9,7 @@ Summary:        MinGW Windows cross-compiler (GCC) for C
 
 License:        GPLv2+
 Group:          Development/Other
-URL:            http://www.mingw.org/
+URL:            https://www.mingw.org/
 Source0:        ftp://ftp.gnu.org/gnu/gcc/gcc-%{version}/gcc-core-%{version}.tar.bz2
 Source1:        ftp://ftp.gnu.org/gnu/gcc/gcc-%{version}/gcc-g++-%{version}.tar.bz2
 Patch1:         %{name}-build.patch
