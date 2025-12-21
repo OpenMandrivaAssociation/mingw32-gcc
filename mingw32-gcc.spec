@@ -15,6 +15,7 @@ Source1:        ftp://ftp.gnu.org/gnu/gcc/gcc-%{version}/gcc-g++-%{version}.tar.
 Patch1:         %{name}-build.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
+BuildRequires:	make
 BuildRequires:  texinfo
 BuildRequires:  mingw32-filesystem >= 39-3
 BuildRequires:  mingw32-binutils
